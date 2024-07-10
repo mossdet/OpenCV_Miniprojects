@@ -39,7 +39,7 @@ while(True):
     for (x,y,w,h) in faces:
         cv2.rectangle(frame, (x,y), (x+w, y+h), (0,255, 0), thickness=2)
 
-    eyes = eye_cascade.detectMultiScale(gray_img, scaleFactor=1.05, minNeighbors=30, minSize=(50, 50), maxSize=(150, 150))
+    eyes = eye_cascade.detectMultiScale(gray_img, scaleFactor=1.08, minNeighbors=20, minSize=(50, 50), maxSize=(150, 150))
     for (x,y,w,h) in eyes:
         point = (int(x+w/2),int(y+h/2))
         cv2.circle(frame, point, int(w/4), (0,255, 0), thickness=2)
