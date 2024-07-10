@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "open-cv"
+version = "0.1.0"
+description = "Learn and practice OpenCV"
+authors = ["mossdet <mossdet.detector@gmail.com>"]
+readme = "README.md"
+packages = [{include = "open_cv"}]
+
+[tool.poetry.dependencies]
+python = "3.11.8"
+opencv-contrib-python = "4.10.0.84"
+matplotlib = "3.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
