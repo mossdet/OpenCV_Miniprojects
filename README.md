@@ -1,5 +1,5 @@
 # Face and Eye tracking App
-![Alt text](opencv/Output_Images/Face_Eye_Tracking.png "")
+![Alt text](open_cv/Output_Images/Face_Eye_Tracking.png "")
 Face and Eye tracking App: [Code](https://github.com/mossdet/OpenCV_Miniprojects/blob/master/open_cv/src/ch4/ch4_challenge2.py).
 
 # Chapter 2
@@ -35,7 +35,7 @@ Face and Eye tracking App: [Code](https://github.com/mossdet/OpenCV_Miniprojects
 - Try face an eye detection using the pre-trained Haar Cascade Algorithm
 - Detect face and eyes on the video captured by the webcam from the laptop.
 - Face and Eye tracking App
-![Alt text](opencv/Output_Images/Face_Eye_Tracking.png "")
+![Alt text](open_cv/Output_Images/Face_Eye_Tracking.png "")
 
 <br /><br /><br />
 # HFO Features:
