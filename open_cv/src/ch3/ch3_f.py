@@ -17,9 +17,12 @@ os.makedirs(out_path, exist_ok=True)
 test_img_path  = os.path.join(in_path, "tomatoes.jpg")
 orig_img = cv2.imread(test_img_path, 1)
 hsv_img = cv2.cvtColor(orig_img, cv2.COLOR_BGR2HSV)
-res, th_img = cv2.threshold(hsv_img[:,:,0], 25, 255, cv2.THRESH_BINARY_INV)
+hsv_extract_img = hsv_img[:,:,0]
+th_val = np.mean(hsv_extract_img)
+th_val = 25
+res, th_img = cv2.threshold(hsv_extract_img, th_val, 255, cv2.THRESH_BINARY_INV)
 
-edges_img = cv2.Canny(orig_img, 100, 200, apertureSize=3)
+edges_img = cv2.Canny(orig_img, threshold1=100, threshold2=200, apertureSize=3)
 
 # Invert edges. They will be in black
 edges_img_inv = 255 - edges_img
@@ -30,8 +33,10 @@ eroded_img = cv2.erode(edges_img_inv, kernel, iterations=1)
 
 canny_th = cv2.bitwise_and(eroded_img, th_img)
 
+cv2.imshow("hsv_extract_img", hsv_extract_img)
 cv2.imshow("TH", canny_th)
 cv2.imshow("Canny_Edges", edges_img_inv)
+cv2.imshow("Eroded Canny_Edges", eroded_img)
 cv2.imshow("Canny_TH", canny_th)
 
 contours, hierarchy = cv2.findContours(canny_th, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
